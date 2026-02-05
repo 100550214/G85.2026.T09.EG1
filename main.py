@@ -5,6 +5,7 @@ import string
 letters = string.ascii_letters + string.punctuation + string.digits
 shift = 3
 
+#test
 
 def Encode(word):
     encoded = ""
