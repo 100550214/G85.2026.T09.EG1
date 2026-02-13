@@ -120,14 +120,14 @@ argument-naming-style=snake_case
 # Regular expression matching correct argument names. Overrides argument-
 # naming-style. If left empty, argument names will be checked with the set
 # naming style.
-# <REGLA ORIGIANL> :  # argument-rgx=
-# <REGLA MODIFICADA> : argument-rgx=[a-z_][a-z0-9_]{2,30}$
+# <REGLA ORIGIANL>:  # argument-rgx=
+# <REGLA MODIFICADA>:argument-rgx=[a-z_][a-z0-9_]{2,30}$
 argument-rgx=[a-z_][a-z0-9_]{2,30}$
 
 # Naming style matching correct attribute names.
 
-# REGLA ORIGINAL : attr-naming-style=snake_case
-# REGLA MODIFICADA:  attr-naming-style=UPPER_CASE
+# REGLA ORIGINAL:attr-naming-style=snake_case
+# REGLA MODIFICADA:attr-naming-style=UPPER_CASE
 attr-naming-style=UPPER_CASE
 
 
