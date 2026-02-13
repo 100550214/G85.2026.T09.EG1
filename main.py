@@ -1,6 +1,7 @@
-from UC3MConsulting import EnterpriseManager
+"""importar clasees """
 import string
 from pathlib import Path
+from uc3m_consulting import EnterpriseManager
 
 #GLOBAL VARIABLES
 letters = string.ascii_letters + string.punctuation + string.digits
@@ -8,7 +9,7 @@ shift = 3
 
 #newtest
 
-def Encode(word):
+def encode(word):
     encoded = ""
     for letter in word:
         if letter == ' ':
@@ -18,7 +19,7 @@ def Encode(word):
             encoded = encoded + letters[x]
     return encoded
 
-def Decode(word):
+def decode(word):
     encoded = ""
     for letter in word:
         if letter == ' ':
@@ -36,15 +37,15 @@ def main():
     BASE_DIR = Path(__file__).resolve().parent
     TESTS_DIR = BASE_DIR / "tests"
     mng = EnterpriseManager()
-    res = mng.ReadproductcodefromJSON(TESTS_DIR / "test12.json")
-    strRes = res.__str__()
-    print(strRes)
-    EncodeRes = Encode(strRes)
-    print("Encoded Res "+ EncodeRes)
-    DecodeRes = Decode(EncodeRes)
-    print("Decoded Res: " + DecodeRes)
+    res = mng.readproductcodefrom_json(TESTS_DIR / "test.json")
+    str_res = res.__str__()
+    print(str_res)
+    encode_res = encode(str_res)
+    print("Encoded Res "+ encode_res)
+    decode_res = decode(encode_res)
+    print("Decoded Res: " + decode_res)
     print("cif: " + res.ENTERPRISE_CIF)
-    print("enterprise_name: " + res.ENTerprise_Name)
+    print("enterprise_name: " + res.ENTERPRISE_NAME)
     print("enterprise_phone: " + res.PHONE_NUMBER)
 
 if __name__ == "__main__":

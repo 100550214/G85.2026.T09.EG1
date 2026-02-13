@@ -1,3 +1,4 @@
-from UC3MConsulting.EnterpriseRequest import EnterpriseRequest
-from UC3MConsulting.EnterpriseManager import EnterpriseManager
-from UC3MConsulting.EnterpriseManagementException import EnterpriseManagementException
+"""importar paquetes"""
+from uc3m_consulting.enterprise_request import EnterpriseRequest
+from uc3m_consulting.enterprise_manager import EnterpriseManager
+from uc3m_consulting.enterprise_management_exception import EnterpriseManagementException
