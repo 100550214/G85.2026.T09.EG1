@@ -1,0 +1,68 @@
+#REGLA  1
+# REGLA ORIGINAL : attr-naming-style=snake_case
+# REGLA MODIFICADA:  attr-naming-style=UPPER_CASE
+
+# Comentarios:
+## Modifca el estilo de nomenclatura de atributos al estilo de  UPPER_CASE
+## Ejemplo positivo: AT1
+## Ejemplo negativo: at1
+
+
+
+#REGLA 2
+# REGLA ORIGINAL  const-naming-style=UPPER_CASE
+# REGLA MODIFICADA const-naming-style=snake_case
+# Comentarios:
+## Nomenclatura de constantes siguen el estilo snake_case
+## Ejemplo positivo: var
+## Ejemplo negativo : Var, VAR, vAR
+
+
+#REGLA 3
+# REGLA ORIGINAL : max-args=5
+# REGLA MODIFICADA: max-args=7
+#Comentarios:
+## El número máximo de argumento por función es 7.
+## Ejemplo positivo: def func1( arg1, arg2, arg3)
+## Ejemplo negativo: def func2( arg1, arg2, ..., arg8)
+
+
+# REGLA 4
+# REGLA ORIGINAL : max-line-length=100
+# REGLA MODIFICADA : max-line-length=150
+## COMENTARIOS:
+## La longitud máxima por línea es 150
+
+
+# REGLA 5
+# Allow the body of an if to be on the same line as the test if there is no
+# else.
+# REGLA ORIGINAL: single-line-if-stmt= no
+# REGLA MODIFICADA: single-line-if-stmt= yes
+## COMENTARIOS
+## Permite en caso de estamentos de if sin else, que su cuerpo se sitúe en la misma línea que la declaración de estamento if .
+##Ejemplo positivo: if a = 5 then, b= 3.
+
+#REGLA 6
+# <REGLA ORIGIANL> :  # argument-rgx=
+# <REGLA MODIFICADA> : argument-rgx=[a-z_][a-z0-9_]{2,30}$
+## COMENTARIOS
+## Exige que los nombres de los argumentos empiezen por una letra en mínúscula o guión bajo, seguido de un número mínimo de 2 y máximo de 30
+## de elementos que pueden ser letras en mínúsculas, un número(1-9) o guión bajo.
+## Ejemplo positivo:  def func1( argumento_1)
+## Ejemplo negativo: def func2( ArGUMENTO2)
+
+# REGLA 7
+## <REGLA ORIGINAL> : class-attribute-naming-style=any
+## <REGLA MODIFICADA> : class-attribute-naming-style=snake_case
+## COMENTARIOS
+## Exige que la nomenclatura de los atributos de clases siguen el estilo snake_case, todas caracterese en minúscula.
+## Ejemplo positivo:  class1 ( arg1):
+                        self.a = a
+##Ejemplo negativo: class1( arg1):
+                        self.aA= aA
+                        self.A = A
+
+#REGLA 8
+
+
