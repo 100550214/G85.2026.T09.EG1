@@ -1,12 +1,13 @@
+"""importar clases"""
 import json
-from .EnterpriseManagementException import EnterpriseManagementException
-from .EnterpriseRequest import EnterpriseRequest
+from .enterprise_management_exception import EnterpriseManagementException
+from .enterprise_request import EnterpriseRequest
 
 class EnterpriseManager:
     def __init__(self):
         pass
 
-    def ValidateCIF(self, CiF ):
+    def validate_cif(self, cif):
         dicc = {
             0:"J",
             1:"A",
@@ -19,7 +20,7 @@ class EnterpriseManager:
             8:"H",
             9:"I",
         }
-        pos_central = CiF[1:-1]
+        pos_central = cif[1:-1]
         suma_pares = 0
         suma_impares = 0
         digito_impar = 0
@@ -41,11 +42,11 @@ class EnterpriseManager:
             digito_base = 0
         else:
             digito_base = 10 - unidad
-        if CiF[0] in ["A","B","E","H"]:
-            return int(CiF[-1]) == digito_base
-        if CiF[0] in ["K","P","Q","S"]:
+        if cif[0] in ["A", "B", "E", "H"]:
+            return int(cif[-1]) == digito_base
+        if cif[0] in ["K", "P", "Q", "S"]:
             cc_letra = dicc[digito_base]
-            return CiF[-1] == cc_letra
+            return cif[-1] == cc_letra
         return False
 
 
@@ -53,11 +54,11 @@ class EnterpriseManager:
 
 
 
-    def ReadproductcodefromJSON( self, fi ):
+    def readproductcodefrom_json(self, fii):
 
         try:
-            with open(fi,encoding="UTF-8") as f:
-                DATA = json.load(f)
+            with open(fii, encoding="UTF-8") as f:
+                data = json.load(f)
         except FileNotFoundError as e:
             raise EnterpriseManagementException("Wrong file or file path") from e
         except json.JSONDecodeError as e:
@@ -65,14 +66,13 @@ class EnterpriseManager:
 
 
         try:
-            T_CIF = DATA["cif"]
-            T_PHONE = DATA["phone"]
-            E_NAME = DATA["enterprise_name"]
-            req = EnterpriseRequest(T_CIF, T_PHONE,E_NAME)
+            t_cif = data["cif"]
+            t_phone = data["phone"]
+            e_name = data["enterprise_name"]
+            req = EnterpriseRequest(t_cif, t_phone, e_name)
         except KeyError as e:
             raise EnterpriseManagementException("JSON Decode Error - Invalid JSON Key") from e
-        if not self.ValidateCIF(T_CIF) :
-            print(self.ValidateCIF(T_CIF))
+        if not self.validate_cif(t_cif) :
+            print(self.validate_cif(t_cif))
             raise EnterpriseManagementException("Invalid FROM IBAN")
         return req
-    #
