@@ -64,5 +64,33 @@
                         self.A = A
 
 #REGLA 8
-#
+# < REGLA ORIGINAL>: no-docstring-rgx=^_
+# < REGLA MODIFICADA>: no-docstring-rgx=.*
+## COMENTARIOS
+## Habilita que cualquier nombre ( función, método, clase incluidos) no necesitan dosctrings y no se notifica mensaje por
+## la falta de docstrings en los mismos. Con excepción de módulo.
+##Ejemplo positivo 1 : func1(...)
+                   """hola"""
+## Ejemplo positivo 2:
+                    func2(...)
 
+## Ejemplo negativo 1 ( excepción):
+
+
+# RELGA9
+# <REGLA ORIGINAL> : docstring-min-length=-1
+# <REGLA MODIFICADA>: docstring-min-length= 3
+##COMENTARIOS
+## Para las funciones/módulos que requieren docstrings, su longitud mínima es 3 caracteres.
+## Ejemplo positivo:  def func1(...):
+                        "hola"
+
+## Ejemplo negativo:  def func2(...):
+                           "a"
+
+# REGLA 10
+## <REGLA ORIGINAL >: include-naming-hint=no
+## < REGLA MODIFICADA>: include-naming-hint=yes
+## COMENTARIOS
+## Incluye una sugerencia sobre el formato correcto de los nombres con invalid-name.
+## Ejemplo positivo: Attribute name "__message" doesn't conform to UPPER_CASE naming style ('([^\\W\\da-z][^\\Wa-z]*|__[^\\W\\dA-Z_]\\w+__)$' pattern) (3:8) [invalid-name]

@@ -51,7 +51,7 @@ class EnterpriseManager:
 
 
 
-        return True
+
 
     def ReadproductcodefromJSON( self, fi ):
 
