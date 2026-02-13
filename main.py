@@ -1,5 +1,6 @@
 """importar clasees """
 import string
+from pathlib import Path
 from uc3m_consulting import EnterpriseManager
 
 #GLOBAL VARIABLES
@@ -28,9 +29,13 @@ def decode(word):
             encoded = encoded + letters[x]
     return encoded
 
+def get_test_path(filename):
+    return os.path.join(TESTS_DIR, filename)
+
 
 def main():
-
+    BASE_DIR = Path(__file__).resolve().parent
+    TESTS_DIR = BASE_DIR / "tests"
     mng = EnterpriseManager()
     res = mng.readproductcodefrom_json("test.json")
     str_res = res.__str__()
@@ -45,4 +50,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    #### dddd
