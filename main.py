@@ -36,8 +36,9 @@ def get_test_path(filename):
 def main():
     BASE_DIR = Path(__file__).resolve().parent
     TESTS_DIR = BASE_DIR / "tests"
+
     mng = EnterpriseManager()
-    res = mng.readproductcodefrom_json("test.json")
+    res = mng.readproductcodefrom_json(TESTS_DIR / "test.json")
     str_res = res.__str__()
     print(str_res)
     encode_res = encode(str_res)
