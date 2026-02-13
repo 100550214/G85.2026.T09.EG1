@@ -186,7 +186,9 @@ const-naming-style=snake_case
 
 # Minimum line length for functions/classes that require docstrings, shorter
 # ones are exempt.
-docstring-min-length=-1
+# <REGLA ORIGINAL> : docstring-min-length=-1
+# <REGLA MODIFICADA>: docstring-min-length= 3
+docstring-min-length=3
 
 # Naming style matching correct function names.
 function-naming-style=snake_case
@@ -209,7 +211,9 @@ good-names=i,
 good-names-rgxs=
 
 # Include a hint for the correct naming format with invalid-name.
-include-naming-hint=no
+## <REGLA ORIGINAL >: include-naming-hint=no
+## < REGLA MODIFICADA>: include-naming-hint=yes
+include-naming-hint=yes
 
 # Naming style matching correct inline iteration names.
 inlinevar-naming-style=any
@@ -239,7 +243,10 @@ name-group=
 
 # Regular expression which should only match function or class names that do
 # not require a docstring.
-no-docstring-rgx=^_
+# < REGLA ORIGINAL>: no-docstring-rgx=^_
+# < REGLA MODIFICADA>: no-docstring-rgx=.*
+no-docstring-rgx=.*
+
 
 # Regular expression matching correct parameter specification variable names.
 # If left empty, parameter specification variable names will be checked with
