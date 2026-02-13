@@ -29,16 +29,13 @@ def decode(word):
             encoded = encoded + letters[x]
     return encoded
 
-def get_test_path(filename):
-    return os.path.join(TESTS_DIR, filename)
-
 
 def main():
-    BASE_DIR = Path(__file__).resolve().parent
-    TESTS_DIR = BASE_DIR / "tests"
+    base_dir = Path(__file__).resolve().parent
+    tests_dir = base_dir / "tests"
 
     mng = EnterpriseManager()
-    res = mng.readproductcodefrom_json(TESTS_DIR / "test.json")
+    res = mng.readproductcodefrom_json(tests_dir / "test7.json")
     str_res = res.__str__()
     print(str_res)
     encode_res = encode(str_res)
