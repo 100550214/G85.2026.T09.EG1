@@ -1,0 +1,5 @@
+{
+  "cif": "A1234567",
+  "phone": "+34131313131",
+  "enterprise_name": "Test A - longitud incorrecta (error esperado)"
+}
